@@ -183,14 +183,24 @@ namespace Tangosol.Net
         {
             try
             {
-                string serverName = string.IsNullOrEmpty(ServerName)
-                        ? ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString()
-                        : ServerName;
+                string serverName;
+                try
+                {
+                    // try to get FQDN
+                    IPHostEntry host = Dns.GetHostEntry(((IPEndPoint) client.Client.RemoteEndPoint).Address);
+                    serverName = host.HostName;
+                }
+                catch (Exception e)
+                {
+                    // failed - revert to IP Address
+                    serverName = ((IPEndPoint) client.Client.RemoteEndPoint).Address.ToString();
+                    CacheFactory.Log("Failed to get FQDN for address " + serverName + " due to " + e.GetType().Name + " - " + e.Message, CacheFactory.LogLevel.Warn);
+                }
 
                 if (LocalCertificateSelector == null)
-                    {
+                {
                     LocalCertificateSelector = LocalCertificatePicker;
-                    }
+                }
                 SslStream stream = new SslStream(client.GetStream(), false,
                                  RemoteCertificateValidator, LocalCertificateSelector);
                 stream.AuthenticateAsClient(serverName, ClientCertificates, Protocols, false);
