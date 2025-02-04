@@ -11,16 +11,16 @@
     <projectUrl>https://coherence.community/</projectUrl>
     <repository type="git" url="https://github.com/oracle/coherence-dotnet-extend-client" branch="main" />
     <icon>coherence-logo.png</icon>
-    <description>This is a .NET 6 (or later) compatible implementation of Oracle Coherence .NET Extend Client. For .NET 6 compatible implementation, see https://www.nuget.org/packages/Coherence/.</description>
+    <description>This is a .NET 8 (or later) compatible implementation of Oracle Coherence .NET Extend Client. For .NET 8 compatible implementation, see https://www.nuget.org/packages/Coherence/.</description>
     <releaseNotes>For release notes, please visit https://github.com/oracle/coherence-dotnet-extend-client/releases/tag/$version$/.</releaseNotes>
     <copyright>Copyright (c) 2000, 2025, Oracle and/or its affiliates. All rights reserved.</copyright>
     <language>en-US</language>
     <tags>IMDG;Scalable;Distributed;DB;Cache;Microservices</tags>
   </metadata>
   <files>
-    <file src="bin\Release\net6.0\Coherence.dll" target="lib\Coherence.dll" />
-    <file src="bin\Release\net6.0\Coherence.pdb" target="lib\Coherence.pdb" />
-    <file src="..\..\Tests\Coherence.Tests\bin\Release\net6.0\Common.Logging.dll" target="lib\Common.Logging.dll" />
+    <file src="bin\Release\net8.0\Coherence.dll" target="lib\Coherence.dll" />
+    <file src="bin\Release\net8.0\Coherence.pdb" target="lib\Coherence.pdb" />
+    <file src="..\..\Tests\Coherence.Tests\bin\Release\net8.0\Common.Logging.dll" target="lib\Common.Logging.dll" />
     <file src="config\cache-config.xsd" target="config\cache-config.xsd" />
     <file src="config\coherence.xsd" target="config\coherence.xsd" />
     <file src="config\coherence-pof-config.xml" target="config\coherence-pof-config.xml" />

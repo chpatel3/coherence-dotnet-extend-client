@@ -22,7 +22,7 @@
   <Import Project="Coherence.properties"/>
 
   <PropertyGroup>
-    <BuildTargetVersion Condition="'$(BuildTargetVersion)'==''">net6.0</BuildTargetVersion>
+    <BuildTargetVersion Condition="'$(BuildTargetVersion)'==''">net8.0</BuildTargetVersion>
     <TargetFrameworkVersion>v$(BuildTargetVersion)</TargetFrameworkVersion>
     <BuildVersion>$(AssemblyMajorVersion).$(AssemblyMinorVersion).$(AssemblyServicePack).$(AssemblyPatch)</BuildVersion>
     <BuildDescription Condition="'$(BuildOfficial)' != ''">$(AssemblyDescriptions)</BuildDescription>
